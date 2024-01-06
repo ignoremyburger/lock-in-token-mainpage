@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gotta $LOCKIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="main" class="container mt-5 m-auto">
+        <h1>IT'S 2024, TIME TO <span class="text-success">$LOCKIN</span></h1>
+        <p>This is the main page of Gotta Lock In token.</p>
+        <img src="lockin.png">
+        <marquee><b>WARNING*: This is a meme token and does not hold investment values. Purchase this token as a meme only.</b></marquee>    
+        <h4><b><u>Some helpful buttons</u></b></h4>
+        <div id="action">
+            <button type="link" class="btn btn-primary m-2" onclick="window.location.href = `https://bscscan.com/token/0x8cf02b890caad0770ba25d7da3cb11de275ce527`">
+                <img src="bscscan.png" id="logo">
+                <b>Contract</b>
+            </button>
+            <button type="link" class="btn btn-primary m-2" onclick="window.location.href = `https://pancakeswap.finance/swap?outputCurrency=0x8cf02B890CAad0770BA25d7Da3cB11de275CE527`">
+                <img src="pancakeswap-cake-logo.png" id="logo">
+                <b>Swap on PancakeSwap</b>
+            </button>
+            <button type="link" class="btn btn-primary m-2" onclick="window.location.href = `https://coinmarketcap.com/dexscan/bsc/0x1c3e2bafcda85d49fa72072d12bf1212bde49fd5/`">
+                <img src="coinmarketcap-logo.png" id="logo">
+                <b>Check the page on CMC</b>
+            </button>
+        </div>
+        <div class="mt-5">
+            <div class="mb-5">
+                <h3 class="mb-3"><b>Our Tokenomics (numbers are recorded in percentage)</b></h3>
+                <p class="text-warning">This number might change in the future, check the <a href="https://bscscan.com/token/0x8cf02b890caad0770ba25d7da3cb11de275ce527#balances">holders</a> page for the latest info</p>
+            </div>
+            <div id="tokenomics">
+                <canvas id="tokenomics-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <style>
+        html{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #main{
+            background-color: rgba(0, 0, 0, 0.9);
+            height: fit-content;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        #logo{
+            height: 50px;
+            width: 50px;
+            padding: 10px;
+        }
+        #tokenomics{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        #tokenomics-chart{
+            height: auto !important;
+            width: 60% !important;
+            padding: 20px;
+            background-color: white;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const cfg = {
+            type: 'pie',
+            data: {
+                datasets: [{
+                    data: [48, 42, 10]
+                }],
+                labels: ['PancakeSwap Liquidity Pool (estimate)', 'Developer (estimate)', 'Treasury and Backup (estimate)']
+            }
+        }
+        const chart = new Chart(
+            document.getElementById('tokenomics-chart'),
+            cfg
+        )
+    </script>
+</body>
+</html>
